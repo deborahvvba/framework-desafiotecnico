@@ -31,7 +31,6 @@ const Posts = () => {
 
     return (
         <>
-        <div>Posts</div>
         {posts === null ? 'Estamos carregando os dados' : <Tabela titulo={'Postagens'} objeto={posts} />}
         </>
     )

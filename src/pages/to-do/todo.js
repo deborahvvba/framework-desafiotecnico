@@ -32,7 +32,6 @@ const ToDo = () => {
 
     return (
         <>
-        <div>to-do</div>
         {todo === null ? 'Estamos carregando os dados' : <Tabela titulo={'To-Do'} objeto={todo} />}
         </>
     )
