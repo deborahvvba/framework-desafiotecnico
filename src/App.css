@@ -73,3 +73,17 @@
     padding-top: 8px;
     font-family: monospace;
 }
+
+@media(max-width: 730px) {
+  .navbar {
+    height: 100px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+
+  .App-link {
+    margin-left: 20px;
+  }
+}
