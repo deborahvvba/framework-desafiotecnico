@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import "./Tabela.css"
 
+const LINHAS_POR_PAGINA = 30;
+
 const Tabela = ({ titulo, objeto }) => {
 	const [filtro, setFiltro] = useState('');
+	const [paginaAtual, setPaginaAtual] = useState(0);
 
 	let titulos = objeto.titulos;
 	let linhas = objeto.linhas;
@@ -26,6 +29,12 @@ const Tabela = ({ titulo, objeto }) => {
 		linhas = linhasFiltradas;
 	}
 
+	const paginas = Math.ceil(linhas.length / 30);
+	if(!filtro.length) {
+		const inicio = LINHAS_POR_PAGINA * paginaAtual;
+		linhas = linhas.slice(inicio, inicio + LINHAS_POR_PAGINA);
+	}
+
     return (
 		<>
 		<div className="filtro">
@@ -36,6 +45,16 @@ const Tabela = ({ titulo, objeto }) => {
 				placeholder="Filtro"
 			/>
 		</div>
+
+		{!filtro.length &&
+			<div className="paginacao">
+				{[ ...Array(paginas) ].map((item, i) => (
+					<div className="paginacao-item" style={{ background: i === paginaAtual ? 'grey' : '' }} key={i} onClick={() => setPaginaAtual(i)}>
+						{i + 1}
+					</div>
+				))}
+			</div>
+		}
 
         <div className="table">
 			<table border="1px" cellPadding="5px" cellSpacing="2" className="tabela">
