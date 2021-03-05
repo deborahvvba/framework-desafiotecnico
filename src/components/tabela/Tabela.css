@@ -17,6 +17,7 @@
     width: 100%;
     text-align: center;
     height: 80%;
+    padding-bottom: 40px;
 }
 
 .tituloTab {
@@ -32,4 +33,4 @@
     border-bottom: 1px solid #ddd;
   }
   
-td:hover {background-color: gray}
+tr:hover {background-color: gray}

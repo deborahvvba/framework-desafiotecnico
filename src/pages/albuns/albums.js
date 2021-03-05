@@ -33,7 +33,7 @@ const Albums = () => {
     return (
         <>
         <div>albums</div>
-        {albums === null ? 'Estamos carregando os dados' : <Tabela objeto={albums} />}
+        {albums === null ? 'Estamos carregando os dados' : <Tabela titulo={'Álbuns'} objeto={albums} />}
         </>
     )
 }

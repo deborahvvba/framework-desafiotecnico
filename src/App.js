@@ -1,11 +1,10 @@
 /* Import statements */
 import React from "react";
-import { Router, Link, Route, Switch } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Todo from "./pages/to-do/todo";
 import Albums from "./pages/albuns/albums";
 import Posts from "./pages/postagens/posts";
 import './App.css';
-import history from './common/history';
 
 const App = () => {
   return (
@@ -32,13 +31,9 @@ const App = () => {
       <a>Desenvolvido por Deborah Vilas Boas</a>
       </div>
 
-      <Router history={history}>
-        <Switch>
-          <Route path="/postagens" component={Posts} />
-          <Route path="/albuns" component={Albums} />
-          <Route path="/todos" component={Todo} />
-        </Switch>
-      </Router>
+      <Route path="/postagens" component={Posts} />
+      <Route path="/albuns" component={Albums} />
+      <Route path="/todos" component={Todo} />
     </div>
   );
 }

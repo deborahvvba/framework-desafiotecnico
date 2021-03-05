@@ -12,7 +12,7 @@ const ToDo = () => {
     }, []);
 
     const getToDo = async () => {
-        const albumsResponse = await GetToDo();
+        const todoResponse = await GetToDo();
         
         const todoNormalized = {
             titulos: [
@@ -23,7 +23,7 @@ const ToDo = () => {
                 
             ],
             linhas: todoResponse.map((item) => {
-                return [item.userId, item.id, item.title, item.completed];
+                return [item.userId, item.id, item.title, item.completed.toString()];
             }),
         };
 
@@ -33,7 +33,7 @@ const ToDo = () => {
     return (
         <>
         <div>to-do</div>
-        {todo === null ? 'Estamos carregando os dados' : <Tabela objeto={todo} />}
+        {todo === null ? 'Estamos carregando os dados' : <Tabela titulo={'To-Do'} objeto={todo} />}
         </>
     )
 }
