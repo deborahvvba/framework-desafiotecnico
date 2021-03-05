@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="container">
       <nav className="navbar"> 
-      <a href="https://frwk.com.br/"><img src="./logof.png" className= "logo"></img></a>
+      <a href="https://frwk.com.br/" target="_blank"><img src="./logof.png" className= "logo"></img></a>
        <ul className="App-link">
        
             <Link className="App-link" to="/"><button className="button">Menu inicial</button></Link>
